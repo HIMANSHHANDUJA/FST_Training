@@ -1,0 +1,9 @@
+--ACTIVITY 3
+SELECT salesman_id,salesman_city FROM Salesman 
+GROUP BY salesman_id,salesman_city ;
+
+SELECT salesman_id,salesman_city FROM Salesman 
+WHERE salesman_city='Paris';
+
+SELECT * FROM Salesman 
+WHERE salesman_name='Paul Adam'

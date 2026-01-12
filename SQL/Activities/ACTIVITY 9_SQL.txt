@@ -1,0 +1,44 @@
+---ACTIVITY 9
+-- Create the customers table
+create table customers (
+    customer_id int primary key, customer_name varchar(32),
+    city varchar(20), grade int, salesman_id int);
+
+-- Insert values into it
+INSERT ALL
+    INTO customers VALUES (3002, 'Nick Rimando', 'New York', 100, 5001)
+    INTO customers VALUES (3007, 'Brad Davis', 'New York', 200, 5001)
+    INTO customers VALUES (3005, 'Graham Zusi', 'California', 200, 5002)
+    INTO customers VALUES (3008, 'Julian Green', 'London', 300, 5002)
+    INTO customers VALUES (3004, 'Fabian Johnson', 'Paris', 300, 5006)
+    INTO customers VALUES (3009, 'Geoff Cameron', 'Berlin', 100, 5003)
+    INTO customers VALUES (3003, 'Jozy Altidor', 'Moscow', 200, 5007)
+    INTO customers VALUES (3001, 'Brad Guzan', 'London', 300, 5005)
+SELECT 1 FROM DUAL;
+
+SELECT c.customer_name,s.salesman_name
+from customers c
+join salesman s
+on c.salesman_id=s.salesman_id;
+
+SELECT c.customer_name,s.salesman_name,c.grade
+from customers c
+left join salesman s
+on c.salesman_id=s.salesman_id
+WHERE c.grade<300 
+ORDER BY c.customer_id;
+
+SELECT c.customer_name,s.salesman_name,c.grade
+from customers c
+left join salesman s
+on c.salesman_id=s.salesman_id
+WHERE c.commission<12 
+
+--Write an SQL statement to find the following details of an order - order number, order date, purchase amount of order, which customer gives the order and which salesman works for that customer and commission rate they get for the order.
+
+SELECT o.order_no, o.order_date, o.purchase_amount ,c.customer_name,s.salesman_name
+from orders o
+inner join customers c
+ON c.customer_id=o.customer_id
+inner join salesman s
+on s.salesman_id=c.customer_id;

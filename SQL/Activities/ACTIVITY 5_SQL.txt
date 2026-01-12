@@ -1,0 +1,7 @@
+--ACTIVITY 5
+UPDATE Salesman 
+SET GRADE=200 where salesman_city='Rome'
+UPDATE Salesman
+SET GRADE=300 where salesman_name='James Hoog'
+UPDATE Salesman
+SET salesman_name='McLyon' where salesman_name='Pierre';
