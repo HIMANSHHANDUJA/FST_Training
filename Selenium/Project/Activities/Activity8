@@ -1,0 +1,10 @@
+<suite name="Suite" parallel="classes">
+    <test name="Tests">
+        <classes>
+            <class name="Package.Class1" />
+            <class name="Package.Class2" />
+            <class name="Package.Class3" />
+            <class name="Package.Class4" />
+        </classes>
+    </test>
+</suite>
